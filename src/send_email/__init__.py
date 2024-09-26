@@ -10,8 +10,9 @@ encoding:   -*- coding: utf-8 -*-
 实现步骤
 
 '''
-from .send_email import *
+from .send import *
 
 __all__ = [
-    'SendEmail',
+    'send',
+    'SendEmail'
 ]

@@ -16,9 +16,20 @@ from setuptools import setup, find_packages
 with open('README.md', 'r', encoding='utf-8') as f:
     long_description = f.read()
 
+packages = find_packages('./src')
+print(packages)
+
+'''
+version(0.0.1):
+    第一位0:发行版本
+    第二位0:开发版本
+    第三位1:测试版本
+    测试成功进行发布开发版本,开发版本优化一部分进行发行版本更新
+'''
+
 setup(
     name='lhw-send-email',
-    version='0.0.11',
+    version='0.1.0',
     long_description=long_description,
     long_description_content_type='text/markdown',
     author='骆鸿威',
@@ -30,6 +41,6 @@ setup(
     classifiers=[
         "License :: OSI Approved :: MIT License",
     ],
-    packages=find_packages('./src'),
+    packages=packages,
     package_dir={"": "src"},
 )

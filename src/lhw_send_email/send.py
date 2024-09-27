@@ -19,7 +19,7 @@ class SendEmail:
     def __init__(self, fromEmailAddress: str, password: str, destination: list[str], content: str, subject: str,
                  api=None):
         """
-        fromEmailAddress: 格式 "Name <example@qq.com>"  <>中是邮件服务器(地址)
+        fromEmailAddress: 格式 "Name <example@qq.com>"  <>中是邮件服务器(地址)-也可以是qq邮箱地址
         password: 邮箱授权码
         destination: 格式 "example@qq.com"  邮箱地址,不一定为qq邮箱
         content: 内容
@@ -61,3 +61,11 @@ class SendEmail:
         except Exception as e:
             return f'发送失败:\n{e}'
 
+
+if __name__ == '__main__':
+    s = SendEmail('1959415641@qq.com', 'vrpphqonlthjbcea',
+                  ['2704316524@qq.com'],
+                  f"欢迎来到墨安论坛,您的注册验证码为:\n"
+                  f"123321\n"
+                  f"请在验证码栏输入上述验证码", '墨安论坛注册验证码')
+    s.send()
